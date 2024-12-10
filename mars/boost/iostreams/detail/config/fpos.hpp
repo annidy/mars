@@ -25,7 +25,7 @@
 # if (defined(_YVALS) || defined(_CPPLIB_VER)) && !defined(__SGI_STL_PORT) && \
      !defined(_STLPORT_VERSION) && !defined(__QNX__)
      /**/
-#  define BOOST_IOSTREAMS_HAS_DINKUMWARE_FPOS
+//#  define BOOST_IOSTREAMS_HAS_DINKUMWARE_FPOS
 # endif
 
 #endif // #ifndef BOOST_IOSTREAMS_DETAIL_CONFIG_FPOS_HPP_INCLUDED
