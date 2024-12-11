@@ -3,7 +3,7 @@
 #include "mars/comm/xlogger/xlogger.h"
 #include "mars/xlog/appender.h"
 
-#include "appender2.h"
+#include "mars/xlog/appender2.h"
 
 using namespace mars::xlog;
 
@@ -31,8 +31,8 @@ int main()
     config2.nameprefix_ = "gbk";  // 文件名前缀。生成文件格式为 cdt_20241011.xlog
     config2.cache_days_ = 3;
    
-    sample::appender_open1(config1);
-    sample::appender_open2(config2);
+    mars::xlog2::appender_open1(config1);
+    mars::xlog2::appender_open2(config2);
 
     for (int i = 0; i < 100; i++) {
 
@@ -41,6 +41,6 @@ int main()
 
     }
     xinfo2("info=1");
-    sample::appender_flush_sync();
-    sample::appender_close();
+    mars::xlog2::appender_flush_sync();
+    mars::xlog2::appender_close();
 }

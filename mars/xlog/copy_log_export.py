@@ -18,6 +18,8 @@ def cpHeaderFiles():
 def main():
 	cpHeaderFiles()
 	shutil.copy("./comipler_util.h", XLOG_EXPORT_PATH)
+	shutil.copy("./appender2.h", XLOG_EXPORT_PATH)
+
 	
 if __name__ == "__main__":
 	main()

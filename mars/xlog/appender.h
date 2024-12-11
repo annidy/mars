@@ -24,6 +24,7 @@
 
 #include <string>
 #include <vector>
+#include "compiler_util.h"
 
 namespace mars {
 namespace xlog {

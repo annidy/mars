@@ -37,8 +37,7 @@ foreach(CompilerFlag ${CompilerFlags})
 endforeach()
 
 set(SELF_SRC_FILES
-    main.cpp
-	appender2.cpp)
+    main.cpp)
     
 add_executable(${PROJECT_NAME} ${SELF_SRC_FILES})
 
