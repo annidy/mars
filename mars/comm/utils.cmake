@@ -22,6 +22,7 @@ if(DISABLE_PCDN_PROTOCOL)
 endif()
 
 if(MSVC)
+    add_definitions(-DMARS_USE_DLLS -DMARS_EXPORTS)
     # add DEBUG macro .. release has NDEBUG defaultly
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /DDEBUG")
 

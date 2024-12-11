@@ -21,13 +21,13 @@
 #define APP_COMPILER_UTIL_H_
 
 #if defined(_MSC_VER) && defined(MARS_USE_DLLS)
-#ifdef MARS_APP_EXPORTS
-#define MARS_APP_EXPORT __declspec(dllexport)
+#ifdef MARS_EXPORTS
+#define MARS_EXPORT __declspec(dllexport)
 #else
-#define MARS_APP_EXPORT __declspec(dllimport)
+#define MARS_EXPORT __declspec(dllimport)
 #endif
 #else
-#define MARS_APP_EXPORT
+#define MARS_EXPORT
 #endif
 
 #endif /* APP_COMPILER_UTIL_H_ */

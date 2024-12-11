@@ -85,3 +85,25 @@ if(ANDROID)
                         ${SSL_LIB}
                         ${CRYPT_LIB})
 endif()
+
+if(MSVC)
+
+    link_directories(xlog comm boost zstd)
+
+    # marsxlog
+    set(SELF_LIB_NAME marsxlog)
+    file(WRITE ${CMAKE_BINARY_DIR}/dummy.cpp "extern \"C\" __declspec(dllexport) void mars_dummy() {}")
+    add_library(${SELF_LIB_NAME} SHARED  ${CMAKE_BINARY_DIR}/dummy.cpp)
+    install(TARGETS ${SELF_LIB_NAME} LIBRARY DESTINATION ${SELF_LIBS_OUT} ARCHIVE DESTINATION ${SELF_LIBS_OUT})
+    get_filename_component(CRYPT_LIB ./openssl/openssl_lib_windows/x64/libcrypto.lib ABSOLUTE)
+    get_filename_component(SSL_LIB ./openssl/openssl_lib_windows/x64/libssl.lib ABSOLUTE)
+    
+    target_link_libraries(${SELF_LIB_NAME}
+                            xlog
+                            mars-boost
+                            comm
+                            libzstd_static
+                            ${CRYPT_LIB}
+                            ${SSL_LIB}
+                            )
+endif()

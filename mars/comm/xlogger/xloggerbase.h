@@ -22,6 +22,7 @@
 #include <stdint.h>
 #include <sys/time.h>
 #include <time.h>
+#include "compiler_util.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -66,10 +67,10 @@ extern const char* xlogger_dump(const void* _dumpbuffer, size_t _len);
 extern const char* xlogger_memory_dump(const void* _dumpbuffer,
                                        size_t _len);  // same as xlogger_dump, but don't write dumpbuffer to file.
 
-TLogLevel xlogger_Level();
-void xlogger_SetLevel(TLogLevel _level);
-int xlogger_IsEnabledFor(TLogLevel _level);
-xlogger_appender_t xlogger_SetAppender(xlogger_appender_t _appender);
+MARS_EXPORT TLogLevel xlogger_Level();
+MARS_EXPORT void xlogger_SetLevel(TLogLevel _level);
+MARS_EXPORT int xlogger_IsEnabledFor(TLogLevel _level);
+MARS_EXPORT xlogger_appender_t xlogger_SetAppender(xlogger_appender_t _appender);
 
 typedef int (*xlogger_filter_t)(XLoggerInfo* _info, const char* _log);
 void xlogger_SetFilter(xlogger_filter_t _filter);

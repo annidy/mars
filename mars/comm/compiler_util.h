@@ -37,13 +37,13 @@
 #endif
 
 #if defined(_MSC_VER) && defined(MARS_USE_DLLS)
-#ifdef MARS_COMMON_EXPORTS
-#define MARS_COMMON_EXPORT __declspec(dllexport)
+#ifdef MARS_EXPORTS
+#define MARS_EXPORT __declspec(dllexport)
 #else
-#define MARS_COMMON_EXPORT __declspec(dllimport)
+#define MARS_EXPORT __declspec(dllimport)
 #endif
 #else
-#define MARS_COMMON_EXPORT
+#define MARS_EXPORT
 #endif
 
 #ifndef VARIABLE_IS_NOT_USED
