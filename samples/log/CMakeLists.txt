@@ -61,6 +61,8 @@ link_directories(${SELF_LIBS_OUT})
 get_filename_component(CRYPT_LIB ../../mars/openssl/openssl_lib_windows/x64/libcrypto.lib ABSOLUTE)
 get_filename_component(SSL_LIB ../../mars/openssl/openssl_lib_windows/x64/libssl.lib ABSOLUTE)
 
+find_package(fmt CONFIG REQUIRED)
+
 target_link_libraries(${PROJECT_NAME} ws2_32.lib comsuppw.lib
 						xlog
  #                       app
@@ -70,6 +72,6 @@ target_link_libraries(${PROJECT_NAME} ws2_32.lib comsuppw.lib
 						libzstd_static
  #                       sdt
  #                       stn
+						 fmt::fmt-header-only
                         ${CRYPT_LIB}
                         ${SSL_LIB})
-  
